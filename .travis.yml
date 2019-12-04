@@ -2,6 +2,12 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 install: true
-
+script: mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+cache:
+  directories:
+    - $HOME/.m2
 notifications:
-    email: false
+  email: false
+  env:
+    global:
+      - COVERALLS_REPO_TOKEN=repo_token
