@@ -35,7 +35,7 @@ public class Driver {
 	private String lastName;
 	
 	@Column(name = "is_available", nullable = false)
-	private Boolean isAvailable;
+	private Boolean isAvailable = false;
 	
 	@Column(nullable = false)
 	private String location;

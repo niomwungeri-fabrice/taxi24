@@ -2,7 +2,15 @@ language: java
 jdk: oraclejdk8
 dist: trusty
 install: true
-script: mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+script:
+  - mvn clean install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
 after_success:
   - mvn clean test coveralls:report
 cache:
