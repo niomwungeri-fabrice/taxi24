@@ -1,5 +1,7 @@
 package com.taxi24.test.integrations;
 
+import java.util.UUID;
+
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +32,6 @@ public class Tax24IntegrationTests {
 				MockMvcRequestBuilders.get("/drivers/available").accept(MediaType.APPLICATION_JSON)
 				).andReturn();
 		System.out.println(mvcResult);
+		System.out.println(UUID.randomUUID());
 	}
 }
