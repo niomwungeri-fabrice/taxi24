@@ -36,7 +36,12 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		
+			<!--  Gson: Java to Json conversion -->
+	    <dependency>
+	        <groupId>com.google.code.gson</groupId>
+	        <artifactId>gson</artifactId>
+	        <scope>compile</scope>
+	    </dependency>
 		<dependency>
 		   <groupId>com.google.code.bean-matchers</groupId>
 		   <artifactId>bean-matchers</artifactId>

@@ -11,5 +11,5 @@ import com.taxi24.models.Driver;
 @RepositoryRestResource(collectionResourceRel = "drivers", path ="drivers")
 public interface DriverRepo extends JpaRepository<Driver, UUID>{
 	
-	List<Driver> findByIsAvailableTrue();
+	public List<Driver> findByIsAvailableTrue();
 }

@@ -43,8 +43,11 @@ public class Driver {
 	@OneToMany(mappedBy = "driver")
 	private Set<Trip> trips = new HashSet<>();
 	
-	public Driver(UUID driveId, String firstName, String lastName, Boolean isAvailable, String location) {
+	public Driver() {
 		super();
+	}
+
+	public Driver(UUID driveId, String firstName, String lastName, Boolean isAvailable, String location) {
 		this.driveId = driveId;
 		this.firstName = firstName;
 		this.lastName = lastName;
