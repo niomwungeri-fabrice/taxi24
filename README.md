@@ -38,6 +38,7 @@ $ mvn clean test coveralls:report
 | `GET /driver/{driverId}`     | Fetch one driver using id |
 | `PUT /drivers/{driverId}`    | Update a driver           |
 | `DELETE /drivers/{driverId}` | Delete a driver           |
+| `GET /drivers/{unitTest}/available` | Get available drivers within specified ranges `unitTest`. additional params; `latitude`, `longitude` and `unitTest(optional): M/K` `M` for `Miles` `K` for `Kilometers`.
 
 ## Project built with:
 
