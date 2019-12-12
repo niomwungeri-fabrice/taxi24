@@ -1,9 +1,9 @@
-package unit.repositories;
+package unitTest.repositorieTest;
 
 
 
 import com.taxi24.Taxi24Application;
-import com.taxi24.controllers.DriverController;
+import com.taxi24.dao.DriverRepo;
 import com.taxi24.models.Driver;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -31,8 +30,8 @@ public class DriverRepositoryTest {
     @Autowired
     private TestEntityManager entityManager;
 
-    @MockBean
-    private DriverController driverController;
+    @Autowired
+    private DriverRepo driverRepo;
 
     @Test
     public void whenFindAvailableDriver() {
@@ -54,12 +53,12 @@ public class DriverRepositoryTest {
         entityManager.flush();
 
         //when
-        List<Driver> drivers = driverController.getAvailable();
-        System.out.print(drivers+"======================");
+        List<Driver> drivers = driverRepo.findByIsAvailableTrue();
+
         //then
         assertThat(drivers.size()).isEqualTo(2);
-//        assertThat(drivers.get(7)).isEqualTo(firstDriver);
-//        assertThat(drivers.get(8)).isEqualTo(secondDriver);
+        assertThat(drivers.get(0)).isEqualTo(firstDriver);
+        assertThat(drivers.get(1)).isEqualTo(secondDriver);
     }
 
 }

@@ -5,6 +5,8 @@ package com.taxi24.controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,9 +31,9 @@ public class DriverController {
 		return driverRepo.findByIsAvailableTrue(); 
 	}
 	
-	@GetMapping("/drivers/{kilometers}/available")
+	@GetMapping("/drivers/{distance}/available")
 	public List<Driver> availableWithIn3KM(
-			@PathVariable(value = "kilometers") String kilometers, 
+			@PathVariable(value = "distance") String distance,
 			@RequestParam(name = "latitude") String latitude, 
 			@RequestParam(name = "longitude") String longitude,
 			@RequestParam(name = "unit", required = false) String unit){
@@ -44,7 +46,7 @@ public class DriverController {
 					Double.parseDouble(location[0]), 
 					Double.parseDouble(location[1]), 
 					Double.parseDouble(latitude), 
-					Double.parseDouble(longitude), unit) <= Double.parseDouble(kilometers)) {
+					Double.parseDouble(longitude), unit) <= Double.parseDouble(distance)) {
 				driversWithInRange.add(driver);
 			}
 		}
