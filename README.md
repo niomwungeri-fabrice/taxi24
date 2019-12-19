@@ -37,8 +37,12 @@ $ mvn clean test coveralls:report
 | `POST /drivers`              | Create a driver           |
 | `GET /driver/{driverId}`     | Fetch one driver using id |
 | `PUT /drivers/{driverId}`    | Update a driver           |
-| `DELETE /drivers/{driverId}` | Delete a driver           |
-| `GET /drivers/{unitTest}/available` | Get available drivers within specified ranges `unitTest`. additional params; `latitude`, `longitude` and `unitTest(optional): M/K` `M` for `Miles` `K` for `Kilometers`.
+| `GET /drivers/{unitTest}/available` | Get available drivers within specified ranges range |
+| `GET /riders`               | Fetch all riders         |
+| `POST /riders`              | Create a rider           |
+| `GET /riders/{riderId}`     | Fetch one rider using id |
+| `PUT /riders/{riderId}`    | Update a rider           |
+| `DELETE /riders/{riderId}` | Delete a rider           |
 
 ## Project built with:
 
