@@ -47,7 +47,13 @@
 		    <artifactId>junit</artifactId>
 		    <scope>test</scope>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>com.googlecode.json-simple</groupId>
+			<artifactId>json-simple</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -108,9 +114,6 @@
 					<argLine>
 						--illegal-access=permit
 					</argLine>
-					<include>
-						<include>**/*Test.java</include>
-					</include>
 				</configuration>
 			</plugin>
 			<plugin>
