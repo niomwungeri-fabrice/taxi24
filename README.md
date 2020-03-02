@@ -29,20 +29,7 @@ $ mvn spring-boot:run
 $ mvn clean test coveralls:report
 ```
 
-## EndPoints
-
-| EndPoint                     | Functionality             |
-| ---------------------------- | ------------------------- |
-| `GET /drivers`               | Fetch all drivers         |
-| `POST /drivers`              | Create a driver           |
-| `GET /driver/{driverId}`     | Fetch one driver using id |
-| `PUT /drivers/{driverId}`    | Update a driver           |
-| `GET /drivers/{unitTest}/available` | Get available drivers within specified ranges range |
-| `GET /riders`               | Fetch all riders         |
-| `POST /riders`              | Create a rider           |
-| `GET /riders/{riderId}`     | Fetch one rider using id |
-| `PUT /riders/{riderId}`    | Update a rider           |
-| `DELETE /riders/{riderId}` | Delete a rider           |
+    
 
 ## Project built with:
 
