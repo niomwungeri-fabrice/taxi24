@@ -12,6 +12,7 @@ import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -47,5 +48,10 @@ public class TripController {
     public Trip findOneTrip(@PathVariable(value = "tripId") String tripId){
         UUID trip = UUID.fromString(tripId);
         return tripRepo.getOne(trip);
+    }
+
+    @GetMapping("/trip/active")
+    public List<Trip> getActiveTrips(){
+        return tripRepo.findByIsCompleteFalse();
     }
 }

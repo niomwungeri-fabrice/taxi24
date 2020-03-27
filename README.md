@@ -28,8 +28,24 @@ $ mvn spring-boot:run
 ```sh
 $ mvn clean test coveralls:report
 ```
+## EndPoints
 
-    
+| EndPoint                     | Functionality             |
+| ---------------------------- | ------------------------- |
+| `GET /drivers`               | Fetch all drivers         |
+| `POST /drivers`              | Create a driver           |
+| `GET /driver/{driverId}`     | Fetch one driver using id |
+| `PUT /drivers/{driverId}`    | Update a driver           |
+| `GET /drivers/{unitTest}/available` | Get available drivers within specified ranges range |
+| `GET /riders`               | Fetch all riders         |
+| `POST /riders`              | Create a rider           |
+| `GET /riders/{riderId}`     | Fetch one rider using id |
+| `PUT /riders/{riderId}`    | Update a rider           |
+| `DELETE /riders/{riderId}` | Delete a rider           |
+| `POST /trip/new`|create a new trip|
+| `GET /trip/{tripId}`|Fetch one trip|
+| `GET /trip/active`|Get a list of all active Trips|
+
 
 ## Project built with:
 
@@ -37,3 +53,6 @@ $ mvn clean test coveralls:report
 - `Spring Boot 2`
 - `Hibernate`
 - `PostgreSql`
+
+## Reference:
+- `Bank of kigali`
